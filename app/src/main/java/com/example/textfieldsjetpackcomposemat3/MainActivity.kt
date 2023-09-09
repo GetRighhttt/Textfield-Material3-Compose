@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -20,6 +21,7 @@ import androidx.compose.material.icons.outlined.Money
 import androidx.compose.material.icons.outlined.MonitorWeight
 import androidx.compose.material.icons.outlined.Person2
 import androidx.compose.material.icons.outlined.Scale
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
@@ -204,6 +206,23 @@ class MainActivity : ComponentActivity() {
                             isError = outlinedFieldText.isEmpty(),
                             singleLine = true
                         )
+
+                        Spacer(modifier = Modifier.height(50.dp))
+
+                        Button(
+                            onClick = {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Confirmed",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            },
+                            modifier = Modifier
+                                .align(Alignment.End)
+                                .padding(end = 70.dp)
+                        ) {
+                            Text(text = "Confirm")
+                        }
                     }
                 }
             }
