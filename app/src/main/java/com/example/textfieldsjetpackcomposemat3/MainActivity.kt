@@ -211,11 +211,24 @@ class MainActivity : ComponentActivity() {
 
                         Button(
                             onClick = {
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Confirmed",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                                if (
+                                    nameFieldText.isNotEmpty()
+                                    && moneyFieldText.isNotEmpty()
+                                    && weightFieldText.isNotEmpty()
+                                    && outlinedFieldText.isNotEmpty()
+                                ) {
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Confirmed",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                } else {
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "One or more fields are empty",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
                             },
                             modifier = Modifier
                                 .align(Alignment.End)
